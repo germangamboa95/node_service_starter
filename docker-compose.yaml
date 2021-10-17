@@ -8,6 +8,8 @@ services:
   db:
     image: postgres
     restart: always
+    volumes:
+      - ./scripts/pg/:/docker-entrypoint-initdb.d/
     ports:
       - 9999:5432
     environment:
