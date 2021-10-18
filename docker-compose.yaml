@@ -4,6 +4,8 @@ services:
     build: ./
     volumes:
       - ./:/usr/app/src
+    ports:
+      - 3000:3000
     command: npm run start:dev
   db:
     image: postgres
