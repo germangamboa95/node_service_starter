@@ -21,6 +21,7 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
+    "@overnightjs/core": "^1.7.6",
     "express": "^4.17.1"
   }
 }

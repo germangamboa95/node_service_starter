@@ -1,9 +1,7 @@
-import express from "express";
+import { ApiServer } from "./server";
 
-const app = express();
+const boot = async () => {
+  new ApiServer().start(Number(process.env.PORT));
+};
 
-app.get("/", (req, res) => {
-  res.send("Hello");
-});
-
-const server = app.listen(3000);
+boot().catch((err) => console.error(`Service failed to boot`, err));
