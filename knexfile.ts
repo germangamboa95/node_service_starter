@@ -3,11 +3,7 @@
 module.exports = {
   development: {
     client: "pg",
-    connection: {
-      database: "main_schema",
-      user: "postgres",
-      password: "example",
-    },
+    connection: "postgres://postgres:example@localhost:9999/main_schema",
   },
 
   staging: {
