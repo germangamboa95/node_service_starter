@@ -3,7 +3,8 @@
 module.exports = {
   development: {
     client: "pg",
-    connection: "postgres://postgres:example@localhost:9999/main_schema",
+    connection: "postgres://postgres:example@localhost:9999/postgres",
+    searchPath: ["main_schema"],
   },
 
   staging: {
