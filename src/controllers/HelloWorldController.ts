@@ -5,6 +5,6 @@ import { Request, Response } from "express";
 export class HelloWorldController {
   @Get()
   private index(req: Request, res: Response) {
-    return res.send("Hello");
+    return res.send("<marquee>Hello</marquee>");
   }
 }
