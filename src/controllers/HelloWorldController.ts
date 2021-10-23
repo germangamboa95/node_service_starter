@@ -5,6 +5,8 @@ import { Request, Response } from "express";
 export class HelloWorldController {
   @Get()
   private index(req: Request, res: Response) {
-    return res.send("<marquee>Hello</marquee>");
+    const food = ["pizza", "cookies"];
+
+    return res.render("home", { layout: "app", food });
   }
 }
