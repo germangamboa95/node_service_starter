@@ -10,6 +10,7 @@ export class ApiServer extends Server {
   constructor() {
     super(process.env.NODE_ENV === "development"); // setting showLogs to true
 
+    this.app.use(express.static(path.join(__dirname, "./public")));
     this.app.engine("handlebars", hbs());
     this.app.set("view engine", "handlebars");
 

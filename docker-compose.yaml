@@ -1,15 +1,15 @@
 version: "3.9"
 services:
-  api:
+  app:
     build: ./
     volumes:
-      - ./:/usr/app/src
+      - ./:/usr/app
     environment:
       PORT: 3000
+      DATABASE: postgres://postgres:example@db:5432/postgres
     ports:
       - 3000:3000
     command: npm run start:dev
-    
   db:
     image: postgres
     restart: always

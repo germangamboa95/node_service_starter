@@ -19,7 +19,8 @@
     "@types/express-handlebars": "^5.3.1",
     "@types/hbs": "^4.0.1",
     "@types/morgan": "^1.9.3",
-    "@types/node": "^16.10.9",
+    "@types/node": "^16.11.6",
+    "@types/validator": "^13.6.6",
     "nodemon": "^2.0.13",
     "rimraf": "^3.0.2",
     "ts-node": "^10.3.0",
@@ -32,6 +33,9 @@
     "knex": "^0.95.11",
     "morgan": "^1.10.0",
     "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.9.0",
+    "sequelize-typescript": "^2.1.1",
     "winston": "^3.3.3"
   }
 }
