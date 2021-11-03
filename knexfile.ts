@@ -9,7 +9,6 @@ module.exports = {
   development: {
     client: "pg",
     connection: process.env.DATABASE,
-    searchPath: ["main_schema"],
     migrations,
   },
 

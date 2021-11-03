@@ -3,11 +3,13 @@ import { Logger } from "./logger";
 import { ApiServer } from "./server";
 
 const boot = async () => {
-  const sequelize = new Sequelize({
-    database: process.env.DATABASE,
+  const sequelize = new Sequelize(process.env.DATABASE, {
     dialect: "postgres",
     models: [__dirname + "/models"],
-    logging: (sql, timing) => Logger.info(sql),
+    logging: process.env.NODE_ENV === "production" ? false : console.log,
+    define: {
+      underscored: true,
+    },
   });
 
   console.log(sequelize.models);
