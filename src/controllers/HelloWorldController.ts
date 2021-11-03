@@ -7,6 +7,6 @@ export class HelloWorldController {
   private index(req: Request, res: Response) {
     const food = ["pizza", "cookies"];
 
-    return res.render("home", { layout: "app", food });
+    return res.render("home", { layout: "app", food, some_word: "Word" });
   }
 }
