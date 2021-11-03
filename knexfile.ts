@@ -10,9 +10,11 @@ module.exports = {
     client: "pg",
     connection: process.env.DATABASE ?? process.env.DATABASE_URL,
     migrations,
+    ssl: { rejectUnauthorized: false },
   },
 
   staging: {
+    ssl: { rejectUnauthorized: false },
     client: "pg",
     connection: process.env.DATABASE ?? process.env.DATABASE_URL,
     searchPath: ["main_schema"],
@@ -24,6 +26,7 @@ module.exports = {
   },
 
   production: {
+    ssl: { rejectUnauthorized: false },
     client: "pg",
     connection: process.env.DATABASE ?? process.env.DATABASE_URL,
     searchPath: ["main_schema"],
