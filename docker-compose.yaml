@@ -6,21 +6,23 @@ services:
       - ./:/usr/app
     environment:
       PORT: 3000
-      DATABASE: postgres://postgres:example@db:5432/postgres
+      # DATABASE_URL: mysql://service_starter:show-password@db-mysql-nyc1-08979-do-user-3850413-0.b.db.ondigitalocean.com:25060/service_starter_database?ssl-mode=REQUIRED
+      DATABASE_URL: mysql://root:root@db:3306/main_schema
     ports:
       - 3000:3000
     command: npm run start:dev
     networks:
       - service
   db:
-    image: postgres
+    image: mysql
+    platform: linux/x86_64
     restart: always
     volumes:
       - ./scripts/pg/:/docker-entrypoint-initdb.d/
     ports:
-      - 9999:5432
+      - 9999:3306
     environment:
-      POSTGRES_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: root
     networks:
       - service
 networks:

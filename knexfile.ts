@@ -7,17 +7,15 @@ const migrations = {
 
 module.exports = {
   development: {
-    client: "pg",
-    connection: process.env.DATABASE ?? process.env.DATABASE_URL,
+    client: "mysql2",
+    connection: process.env.DATABASE_URL,
+
     migrations,
-    ssl: { rejectUnauthorized: false },
   },
 
   staging: {
-    ssl: { rejectUnauthorized: false },
-    client: "pg",
-    connection: process.env.DATABASE ?? process.env.DATABASE_URL,
-    searchPath: ["main_schema"],
+    client: "mysql2",
+    connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
       max: 10,
@@ -26,10 +24,9 @@ module.exports = {
   },
 
   production: {
-    ssl: { rejectUnauthorized: false },
-    client: "pg",
-    connection: process.env.DATABASE ?? process.env.DATABASE_URL,
-    searchPath: ["main_schema"],
+    client: "mysql2",
+    connection: process.env.DATABASE_URL,
+
     pool: {
       min: 2,
       max: 10,
