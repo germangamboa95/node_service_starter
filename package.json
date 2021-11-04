@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon",
     "build": "rimraf ./build && tsc",
-    "start": "npm run build && node build/src/index.js",
+    "start": "npm run build && npm run migrate:latest  && node build/src/index.js",
     "knex": "knex",
     "migrate:latest": "knex migrate:latest"
   },
