@@ -9,7 +9,8 @@
     "build": "rimraf ./build && tsc",
     "start": "npm run build && npm run migrate:latest  && node build/src/index.js",
     "knex": "knex",
-    "migrate:latest": "knex migrate:latest"
+    "migrate:latest": "knex migrate:latest",
+    "copy": "copyfiles -V ./src/views/**/** ./build/src/views"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "@types/morgan": "^1.9.3",
     "@types/node": "^16.11.6",
     "@types/validator": "^13.6.6",
+    "copyfiles": "^2.4.1",
     "nodemon": "^2.0.13",
     "rimraf": "^3.0.2",
     "ts-node": "^10.3.0",
