@@ -6,8 +6,7 @@ services:
       - ./:/usr/app
     environment:
       PORT: 3000
-      DATABASE_URL: mysql://service_starter:oCWPhkHq0rPqqWOg@db-mysql-nyc1-08979-do-user-3850413-0.b.db.ondigitalocean.com:25060/service_starter_database?ssl-mode=REQUIRED
-      # DATABASE_URL: mysql://root:root@db:3306/main_schema
+      DATABASE_URL: mysql://root:root@db:3306/main_schema
     ports:
       - 3000:3000
     command: npm run start:dev
